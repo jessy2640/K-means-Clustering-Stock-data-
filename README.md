@@ -4,6 +4,5 @@
 Stock data is clustered using Kmeans algorithm.
 ---------
 
-How to run:
 
-run test.py file
+Run test.py file
