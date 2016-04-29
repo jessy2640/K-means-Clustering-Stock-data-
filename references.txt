@@ -1,0 +1,13 @@
+for plotting graphs:
+http://matplotlib.org/examples/index.html
+http://matplotlib.org/examples/shapes_and_collections/scatter_demo.html
+
+
+
+
+for calculating datetime in python:
+http://www.tutorialspoint.com/python/time_mktime.htm
+https://docs.python.org/2/library/datetime.html
+http://www.tutorialspoint.com/python/time_strptime.htm
+
+

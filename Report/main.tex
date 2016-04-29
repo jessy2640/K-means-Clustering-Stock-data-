@@ -1,0 +1,249 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Project Titlepage Modified (v 0.1) by rcx
+%
+% Original Source: http://www.howtotex.com
+% Date: February 2014
+% 
+% This is a title page template which be used for articles & reports.
+% 
+% This is the modified version of the original Latex template from
+% aforementioned website.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{1pt}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{Stock market analysis using correlation and  clustering 	algorithms}}
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}}
+
+\date{}
+
+\author{
+		Submitted by :\\ Aman Bakshi (Roll No:13)\\
+        			   Jallipalli Vinay(Roll No:14)\\
+                       \\\\
+		Department of Information and communication technology\\
+        		MANIPAL INSTITUTE OF TECHNOLOGY}
+
+\maketitle
+\tableofcontents
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+In this paper we present a novel data mining approach to predict behavior of stock market trends. In our paper, the trends and patterns in stock
+market are shown and analyzed, on the basis of the current and old stock
+market data, available. The patterns are evaluated using clustering algorithm
+and correlation analysis. Some patterns and trends always emerge in stock
+markets, which affect prices of all related stocks. By using the cluster information and correlation analysis, our approach predict the stock trends and
+patterns effectively in the real world market.
+
+
+
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+The stock market is an ever-changing space with highly irregular changes in patterns and its behavior. Analyzing stock market behavior is an important economic need. The process applied here,  in analyzing stock market consists of clustering and searching for any occurring anomalies. This will help in easy understanding of stock market and predicting  and evaluating the patterns occurring in the stock market. Subsequently, leading to a better understanding how the stock market works and how the stock prices changes
+
+
+\section*{Domain Introduction}
+\addcontentsline{toc}{section}{Domain Introduction}
+The clustering algorithm is consists of \textbf{data mining} and \textbf{cluster creation} These two terms are inherently related. The data mining part, consists of extracting the data in a useful format and cluster creation, consists of dividing the data into interesting clusters.
+
+\newpage
+\section*{Functionality and design}
+\addcontentsline{toc}{section}{Functionality and design}
+
+The process of clustering can be divided into following steps:
+\begin{enumerate}
+\item 
+ \textbf{Data acquisition} :
+    The data used in the algorithm, is the stock sheet, consisting of one year's worth of stock values of a company. The data used has following categories:
+
+a) Date : Date corresponding the stock values.\\
+b) Open : The price of the stock value at which it opened at the corresponding date.\\
+c) High : The highest value achieved by the stock at the corresponding date.\\
+d) Low  : The lowest value achieved by the stock at the corresponding date.\\
+e) Close  : The price of the stock at which it closed at the corresponding value.\\
+f) Volume : The number of the stocks exchanged.\\  
+\item
+\textbf{Cluster formation }:
+     Once the data is extracted, it is divided into clusters, by implementing K-means, on the stock values. The clusters created are thus, the result of the implementation
+
+\end{enumerate}
+\section*{Tools used}
+\addcontentsline{toc}{section}{Tools used}
+We have primarily used \textbf{ Python} as our base programming language.
+We have used various additional modules of python such as \textbf{math} and \textbf{ scipy}.
+
+\newpage
+\section*{Implementation}
+\addcontentsline{toc}{section}{Implementation}
+We first fetch the data from data source then make
+a pre processing to the data, after we feed it into the k-means
+algorithm to find anomalies. We can then make predictions according to the position of the anomalies and evaluate the result.
+\begin{enumerate}
+\item 
+\textbf{Data preprocessing}:\\\\
+Pre-processing in data mining played essential role for
+enhancing data quality. The basic concept behind is that,
+learning with accurate and high quality data may provide
+more efficient classification results as compared to learning
+with poor quality of data.\\\\
+Data mining is an approach to find the meaningful patterns
+from data.This meaningful content may helpful for decision
+making, classification and large scale data analysis.
+In data mining the main and basic
+element is data. Mining of data and information recovery is
+directly depends upon data. Therefore, learning process of a
+data mining algorithm is majorly depends upon the type of
+data and quality of data.\\
+we are reading the data from \textbf{CSV} file which initially contains only \textbf{DATE,OPEN PRICE} \textbf{CLOSE PRICE, VOLUME}. we process the data to get change in open and close price for all the entries in the data file.we used the python libraries to read the data from CSV file.
+\item 
+\textbf{Algorithm Implementation}:\\\\
+The procedure follows a simple and  easy  way  to classify a given data set  through a certain number of  clusters (assume k clusters). The  main  idea  is to define k centers, one for each cluster. These centers  should  be placed in a proper  way  because of  different  location  causes different  result. So, the better  choice  is  to place them  as  much as possible  far away from each other. The  next  step is to take each point belonging  to a  given data set and associate it to the nearest center. When no point  is  pending,  the first step is completed and an early group age  is done. At this point we need to re-calculate k new centroids as barycenter of  the clusters resulting from the previous step. After we have these k new centroids, a new binding has to be done  between  the same data set points  and  the nearest new center. A loop has been generated. As a result of  this loop we  may  notice that the k centers change their location step by step until no more changes  are done or  in  other words centers do not move any more.
+
+
+
+\end{enumerate}
+
+
+\newpage
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+we found anomalies in the data by clustering the data using k means algorithm. after clustering the points which are far to clusters are known as outliers.
+
+%-------------------------------------------------------------------------------
+% REFERENCES
+%-------------------------------------------------------------------------------
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\textbf{Base paper}:\\
+\url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7310722}\\
+\\\\
+\textbf{ Plotting graphs in python using libraries}:\\
+\url{http://matplotlib.org/examples/index.html}\\
+\url{http://matplotlib.org/examples/shapes_and_collections/scatter_demo.html}\\
+\\\\
+\textbf{For date and time calculation}:\\
+\url{http://www.tutorialspoint.com/python/time_mktime.htm}\\
+\url{https://docs.python.org/2/library/datetime.html}\\
+\url{http://www.tutorialspoint.com/python/time_strptime.htm}
+\\\\
+\textbf{For documentation using Latex}:\\
+We also used online tutorials to look up for LaTeX.\\
+And Document was made online using\\
+\url{https://www.overleaf.com/dash}\\
+\\
+We used various online tutorials for learning pyhton syntax.\\
+\end{document}
+
+%-------------------------------------------------------------------------------
+% SNIPPETS
+%-------------------------------------------------------------------------------
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{file_name}
+%	\caption{}
+%	\centering
+%	\label{label:file_name}
+%\end{figure}
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{graph}
+%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
+%	\centering
+%	\label{label:graph}
+%\end{figure}
+
+%\begin{wrapfigure}{r}{0.30\textwidth}
+%	\vspace{-40pt}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{file_name}
+%	\end{center}
+%	\vspace{-20pt}
+%	\caption{}
+%	\label{label:file_name}
+%\end{wrapfigure}
+
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{manometer}
+%	\end{center}
+%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
+%	\label{label:manometer}
+%\end{wrapfigure}
+
+%\begin{table}[!ht]\footnotesize
+%	\centering
+%	\begin{tabular}{cccccc}
+%	\toprule
+%	\multicolumn{2}{c} {Pearson's correlation test} & \multicolumn{4}{c} {Independent t-test} \\
+%	\midrule	
+%	\multicolumn{2}{c} {Gender} & \multicolumn{2}{c} {Activity level} & \multicolumn{2}{c} {Gender} \\
+%	\midrule
+%	Males & Females & 1st level & 6th level & Males & Females \\
+%	\midrule
+%	\multicolumn{2}{c} {BMI vs. SP} & \multicolumn{2}{c} {Systolic pressure} & \multicolumn{2}{c} {Systolic Pressure} \\
+%	\multicolumn{2}{c} {BMI vs. DP} & \multicolumn{2}{c} {Diastolic pressure} & \multicolumn{2}{c} {Diastolic pressure} \\
+%	\multicolumn{2}{c} {BMI vs. MAP} & \multicolumn{2}{c} {MAP} & \multicolumn{2}{c} {MAP} \\
+%	\multicolumn{2}{c} {W:H ratio vs. SP} & \multicolumn{2}{c} {BMI} & \multicolumn{2}{c} {BMI} \\
+%	\multicolumn{2}{c} {W:H ratio vs. DP} & \multicolumn{2}{c} {W:H ratio} & \multicolumn{2}{c} {W:H ratio} \\
+%	\multicolumn{2}{c} {W:H ratio vs. MAP} & \multicolumn{2}{c} {\% Body fat} & \multicolumn{2}{c} {\% Body fat} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Height} & \multicolumn{2}{c} {Height} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Weight} & \multicolumn{2}{c} {Weight} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Heart rate} & \multicolumn{2}{c} {Heart rate} \\
+%	\bottomrule
+%	\end{tabular}
+%	\caption{Parameters that were analysed and related statistical test performed for current study. BMI - body mass index; SP - systolic pressure; DP - diastolic pressure; MAP - mean arterial pressure; W:H ratio - waist to hip ratio.}
+%	\label{label:tests}
+%\end{table}
